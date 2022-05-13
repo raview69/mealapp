@@ -23,4 +23,16 @@ export const DUMMY_MEALS = [
         description: 'Healthy...and green...',
         price: 18.99,
     },
+    {
+        id: 'm5',
+        name: 'Hot Dog',
+        description: 'Carbenet franc',
+        price: 14.99,
+    },
+    {
+        id: 'm6',
+        name: 'Potato Wedge',
+        description: 'With onion sprinkles',
+        price: 9.99,
+    },
 ]

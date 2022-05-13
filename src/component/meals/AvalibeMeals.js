@@ -8,16 +8,29 @@ const AvalibeMeals = ({ data, cartAdd }) => {
             key={meal.id}
             className="flex justify-between border-b border-zinc-800 py-2"
         >
-            <div>
-                <p className="text-sm font-bold ">{meal.name}</p>
-                <p className="italic text-xs font-light py-1">
-                    {meal.description}
-                </p>
-                <p className="text-[#8a2b06]">${meal.price}</p>
-                <button onClick={() => cartAdd.push(meal.name)}>+</button>
-                <p></p>
-                <button onClick={() => cartAdd.pop(meal.name)}>-</button>
-                <p></p>
+            <div className="flex top-0 left-0 w-full justify-between items-center">
+                <div>
+                    <p className="text-sm font-bold ">{meal.name}</p>
+                    <p className="italic text-xs font-light py-1">
+                        {meal.description}
+                    </p>
+                    <p className="text-[#8a2b06]">${meal.price}</p>
+                </div>
+                <div className="text-xl">
+                    <button
+                        className="font-light"
+                        onClick={() => cartAdd.push(meal.name)}
+                    >
+                        +
+                    </button>
+                    <p></p>
+                    <button
+                        className="font-light"
+                        onClick={() => cartAdd.pop(meal.name)}
+                    >
+                        -
+                    </button>
+                </div>
             </div>
         </li>
     ))

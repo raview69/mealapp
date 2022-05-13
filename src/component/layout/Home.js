@@ -6,22 +6,29 @@ import meal from '../image/meal.jpeg'
 import { DUMMY_MEALS } from '../../data.js'
 
 const Home = () => {
-    const [count, setCount] = useState([])
+    const [cart, setCart] = useState([])
 
     const handleClick = () => {
-        setCount([...count])
-        console.log(count)
+        setCart([...cart])
+        console.log(cart)
     }
+
+    const findDuplicates = (arr) =>
+        arr.filter((item, index) => arr.indexOf(item) != index)
+
+    console.log(findDuplicates(cart)) // find How many duplicates
+    console.log([...new Set(findDuplicates(cart))]) // find duplicates
+
     return (
         <>
-            <Header count={count.length} />
+            <Header count={cart.length} />
             <div
                 className="bg-cover bg-no-repeat w-full h-32 sm:h-60"
                 style={{ backgroundImage: `url(${meal})` }}
             />
             <MealsSummary />
             <div onClick={handleClick}>
-                <AvalibeMeals data={DUMMY_MEALS} cartAdd={count} />
+                <AvalibeMeals data={DUMMY_MEALS} cartAdd={cart} />
             </div>
         </>
     )
