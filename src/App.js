@@ -1,14 +1,10 @@
 import React from 'react'
-import Header from './component/header/Header'
-import Meal from './component/meals/Meals'
+import Home from './component/layout/Home'
 
 const App = () => {
     return (
         <>
-            <Header />
-            <main>
-                <Meal />
-            </main>
+            <Home />
         </>
     )
 }
