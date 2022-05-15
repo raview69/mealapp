@@ -34,7 +34,7 @@ const Home = () => {
     // const itemDup = [...new Set(findDuplicates(cart))] // find duplicates
 
     const totalPrice = cart.map((meallist) => meallist[1])
-    console.log(totalPrice.reduce(add, 0).toFixed(2))
+    const priceShow = totalPrice.reduce(add, 0).toFixed(2)
 
     const cartList = cart.map((meallist, index) => (
         <li key={index}>
@@ -57,6 +57,10 @@ const Home = () => {
                     </div>
                     <div>
                         <ul>{cartList}</ul>
+                    </div>
+                    <div>
+                        <div>Total:</div>
+                        <div>{priceShow}</div>
                     </div>
                 </div>
             ) : (
