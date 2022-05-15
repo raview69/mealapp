@@ -50,17 +50,39 @@ const Home = () => {
             {cartshow ? (
                 <div>
                     <div
-                        className="flex items-center justify-center text-3xl border-2 border-white text-white"
-                        onClick={handleCartCloseClick}
+                        className="flex top-0 left-0 w-full h-20 sticky"
+                        onClick={handleCartClick}
                     >
-                        assuu
+                        <Header count={cart.length} />
                     </div>
-                    <div>
-                        <ul>{cartList}</ul>
-                    </div>
-                    <div>
-                        <div>Total:</div>
-                        <div>{priceShow}</div>
+                    <div
+                        className="bg-cover bg-no-repeat w-full h-32 sm:h-60"
+                        style={{ backgroundImage: `url(${meal})` }}
+                    />
+                    <div className="-mt-20 w-full">
+                        <div className="text-white mx-2 rounded-lg shadow-lg p-5 bg-[#383838] sm:mx-20 lg:mx-52">
+                            <div>
+                                <ul>{cartList}</ul>
+                            </div>
+                            <div className="flex items-center justify-between py-3">
+                                <div>Total:</div>
+                                <div>${priceShow}</div>
+                            </div>
+                            <div className="flex items-center justify-end">
+                                <button
+                                    className="flex items-center justify-center rounded-sm bg-white text-[#383838] px-4 py-1 mr-2"
+                                    onClick={handleCartCloseClick}
+                                >
+                                    Close
+                                </button>
+                                <button
+                                    className="flex items-center justify-center rounded-sm bg-white text-[#383838] px-4 py-1"
+                                    onClick={handleCartCloseClick}
+                                >
+                                    Update
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             ) : (
