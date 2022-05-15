@@ -2,10 +2,10 @@
 import React from 'react'
 import Card from '../ui/Card'
 
-const AvalibeMeals = ({ data, cartAdd }) => {
-    const meallist = data.map((meal) => (
+const AvalibeMeals = ({ data, cartItem }) => {
+    const meallist = data.map((meal, index) => (
         <li
-            key={meal.id}
+            key={index}
             className="flex justify-between border-b border-zinc-800 py-2"
         >
             <div className="flex top-0 left-0 w-full justify-between items-center">
@@ -19,14 +19,18 @@ const AvalibeMeals = ({ data, cartAdd }) => {
                 <div className="text-xl">
                     <button
                         className="font-light"
-                        onClick={() => cartAdd.push(meal.name)}
+                        onClick={() => {
+                            cartItem.push([meal.name, meal.price])
+                        }}
                     >
                         +
                     </button>
                     <p></p>
                     <button
                         className="font-light"
-                        onClick={() => cartAdd.pop(meal.name)}
+                        onClick={() => {
+                            cartItem.pop([meal.name, meal.price])
+                        }}
                     >
                         -
                     </button>
